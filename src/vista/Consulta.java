@@ -216,10 +216,12 @@ public class Consulta extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 PeliculaDao pd = new PeliculaDao();
-                Pelicula p = new Pelicula(nombre.getText(), director.getText(), pais.getText(), clasificacion.getSelectedItem().toString(),Integer.parseInt(anio.getText()), true);
+                Pelicula p = new Pelicula(nombre.getText(), director.getText(), pais.getText(), clasificacion.getSelectedItem().toString(),0, true);
 
                 if (proyeccion.isSelected()) {
                     p.setEn_proyeccion(true);
+                } else {
+                    p.setEn_proyeccion(false);
                 }
 
                 if (pd.update(p)) {//cambiar en metodo de Object Key a Generic g.

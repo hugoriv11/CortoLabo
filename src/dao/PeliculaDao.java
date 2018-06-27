@@ -22,7 +22,7 @@ import modelo.Pelicula;
  */
 public class PeliculaDao implements Metodos<Pelicula>{
     private static final String SQL_INSERT = "INSERT INTO movie (idMovie, nombre, director, pais, clasificacion, anio, en_proyeccion) VALUES(?,?,?,?,?,?,?)";
-    private static final String SQL_UPDATE = "UPDATE movie SET estado = ? WHERE nombre = ?";
+    private static final String SQL_UPDATE = "UPDATE movie SET en_proyeccion = ? WHERE nombre = ?";
     private static final String SQL_DELETE = "DELETE FROM movie WHERE nombre = ?";
     private static final String SQL_READ = "SELECT * FROM movie WHERE nombre = ?";
     private static final String SQL_READALL = "SELECT * FROM movie";
@@ -76,12 +76,6 @@ public class PeliculaDao implements Metodos<Pelicula>{
         try {
             System.out.println(c.getNombre());
             ps = con.getCnx().prepareStatement(SQL_UPDATE);
-//            ps.setString(2, c.getNombre());
-//            ps.setString(3, c.getDirector());
-//            ps.setString(4, c.getPais());
-//            ps.setString(5, c.getClasificacion());
-//            ps.setInt(6, c.getAnio());
-//            ps.setBoolean(7, c.getEn_proyeccion());
             ps.setBoolean(1, c.getEn_proyeccion());
             ps.setString(2, c.getNombre());
             if (ps.executeUpdate() > 0) {
