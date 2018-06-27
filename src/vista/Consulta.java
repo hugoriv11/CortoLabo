@@ -261,7 +261,7 @@ public class Consulta extends JFrame{
                     director.setText(p.getDirector());
                     pais.setText(p.getPais());
                     clasificacion.setSelectedItem(p.getClasificacion());
-                    //anio.setText(Integer.parseInt(p.getAnio()));//no me convierte int a string
+                    anio.setText(Integer.toString(p.getAnio()));//no me convierte int a string
                     //proyeccion.setText(Boolean.parseBoolean(p.getEn_proyeccion()));//no me convierte boolean a string
 
                     if (p.getEn_proyeccion()) {
