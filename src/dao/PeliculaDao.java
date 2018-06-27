@@ -39,7 +39,7 @@ public class PeliculaDao implements Metodos<Pelicula>{
             ps.setString(4, g.getPais());
             ps.setString(5, g.getClasificacion());
             ps.setInt(6, g.getAnio());
-            ps.setBoolean(7, true);
+            ps.setBoolean(7, g.getEn_proyeccion());
             if (ps.executeUpdate() > 0) {
                 return true;
             }
@@ -76,6 +76,12 @@ public class PeliculaDao implements Metodos<Pelicula>{
         try {
             System.out.println(c.getNombre());
             ps = con.getCnx().prepareStatement(SQL_UPDATE);
+//            ps.setString(2, c.getNombre());
+//            ps.setString(3, c.getDirector());
+//            ps.setString(4, c.getPais());
+//            ps.setString(5, c.getClasificacion());
+//            ps.setInt(6, c.getAnio());
+//            ps.setBoolean(7, c.getEn_proyeccion());
             ps.setBoolean(1, c.getEn_proyeccion());
             ps.setString(2, c.getNombre());
             if (ps.executeUpdate() > 0) {
